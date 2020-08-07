@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 322768790}
   m_Layer: 0
   m_Name: GameSettings
-  m_TagString: Untagged
+  m_TagString: GameSettings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShieldsAvailable: 3
-  BoulderSpawnInterval: 1
+  BoulderSpawnInterval: 0.2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 1538930247}
   - component: {fileID: 1538930246}
   - component: {fileID: 1538930245}
+  - component: {fileID: 1538930250}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -546,6 +547,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1538930250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538930244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b95897fca2d1b48bda9c49b24d0b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  shieldSpawner: {fileID: 1582892551}
 --- !u!1 &1582892549
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582892550}
+  - component: {fileID: 1582892551}
   m_Layer: 0
   m_Name: Shield Spawn Point
   m_TagString: Untagged
@@ -576,6 +592,20 @@ Transform:
   m_Father: {fileID: 1538930249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1582892551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582892549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa8011b654a6a24bb27070ffa20e1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldPrefab: {fileID: 3483876982114535115, guid: ef522c794e1f4314587927c0b3753166,
+    type: 3}
 --- !u!1 &1853763583
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853763584}
+  - component: {fileID: 1853763585}
   m_Layer: 0
   m_Name: BoulderSpawner
   m_TagString: Untagged
@@ -600,9 +631,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853763583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 11}
+  m_LocalPosition: {x: 0, y: 15, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853763585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853763583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646528ac3c8756d42aa6b656c6a179b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawnRange: 10
+  boulderPrefab: {fileID: 4387381121979058012, guid: 2df511547ea359343a2c416eb3871a3c,
+    type: 3}
