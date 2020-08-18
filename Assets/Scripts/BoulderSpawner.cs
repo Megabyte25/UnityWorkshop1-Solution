@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BoulderSpawner : MonoBehaviour
 {
@@ -27,7 +24,8 @@ public class BoulderSpawner : MonoBehaviour
         timeSinceLastSpawn += Time.deltaTime;
         if (timeSinceLastSpawn > spawnInterval)
         {
-            Vector3 offset = new Vector3(UnityEngine.Random.Range(-maxSpawnRange, maxSpawnRange), 0, 0);
+            float randomX = Random.Range(-maxSpawnRange, maxSpawnRange);
+            Vector3 offset = new Vector3(randomX, 0, 0);
             GameObject boulder = Instantiate(boulderPrefab, transform.position + offset, Quaternion.identity);
             Destroy(boulder, 10f);
             timeSinceLastSpawn = 0;
