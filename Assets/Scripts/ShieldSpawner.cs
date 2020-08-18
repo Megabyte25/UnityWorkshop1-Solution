@@ -16,6 +16,14 @@ public class ShieldSpawner : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnShield();
+        }
+    }
+
     public void SpawnShield()
     {
         if (shieldsRemaining > 0)

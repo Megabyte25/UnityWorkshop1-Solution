@@ -16,9 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
         // TODO: Press a specific button to spawn a shield
         // TODO: Deduct the number of shields available (consider writing this code in another component)
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            shieldSpawner.SpawnShield();
-        }
+
+        // See ShieldSpawner.cs
     }
 }
